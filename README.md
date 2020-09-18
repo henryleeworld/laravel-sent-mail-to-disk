@@ -1,4 +1,4 @@
-# Laravel 7 將已發送的電子郵件儲存到磁碟
+# Laravel 8 將已發送的電子郵件儲存到磁碟
 
 引入 themsaid 的 laravel-mail-preview 套件來擴增將已發送的電子郵件儲存到磁碟的郵件驅動，每次發送電子郵件時，都會在`storage/email-previews`中生成一個 .html 和 .eml 檔案，其名稱包括第一個收件人和主題。
 
