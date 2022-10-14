@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::mailPreview();
 Route::get('send-mail', function () {
     $details = [
         'title' => '520 新局》就職中華民國第 15 任總統',
