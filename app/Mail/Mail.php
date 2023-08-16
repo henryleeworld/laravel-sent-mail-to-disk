@@ -30,7 +30,7 @@ class Mail extends Mailable
      */
     public function build()
     {
-        return $this->subject('520 新局')
+        return $this->subject(__('President Tsai to Meet With US SPeaker of the House McCarthy and Deliver Public Speech'))
                     ->view('emails.mail');
     }
 }

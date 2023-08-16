@@ -1,4 +1,4 @@
-# Laravel 9 將已發送的電子郵件儲存到磁碟
+# Laravel 10 將已發送的電子郵件儲存到磁碟
 
 引入 spatie 的 laravel-mail-preview 套件來擴增將已發送的電子郵件儲存到磁碟的郵件驅動，每次發送電子郵件時，都會在`storage/email-previews`中生成一個 .html 和 .eml 檔案，其名稱包括第一個收件人和主題。
 
@@ -22,5 +22,5 @@ $ php artisan key:generate
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/oAdPk0e.png)
+![](https://i.imgur.com/nX8pC29.png)
 > 在網路瀏覽器中打開 .html 檔案時，將能夠看到電子郵件的外觀，但是不同的電子郵件客戶端可能會有一些差異
