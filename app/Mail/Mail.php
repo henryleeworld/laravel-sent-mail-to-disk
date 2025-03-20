@@ -5,6 +5,8 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Content;
+use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
 class Mail extends Mailable
@@ -12,25 +14,42 @@ class Mail extends Mailable
     use Queueable, SerializesModels;
 
     public $details;
-   
+
     /**
      * Create a new message instance.
-     *
-     * @return void
      */
     public function __construct($details)
     {
         $this->details = $details;
     }
-   
+
     /**
-     * Build the message.
-     *
-     * @return $this
+     * Get the message envelope.
      */
-    public function build()
+    public function envelope(): Envelope
     {
-        return $this->subject(__('President Tsai to Meet With US SPeaker of the House McCarthy and Deliver Public Speech'))
-                    ->view('emails.mail');
+        return new Envelope(
+            subject: $this->details['title'],
+        );
+    }
+
+    /**
+     * Get the message content definition.
+     */
+    public function content(): Content
+    {
+        return new Content(
+            view: 'emails.mail',
+        );
+    }
+
+    /**
+     * Get the attachments for the message.
+     *
+     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
+     */
+    public function attachments(): array
+    {
+        return [];
     }
 }
