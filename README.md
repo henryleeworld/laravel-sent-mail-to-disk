@@ -1,4 +1,4 @@
-# Laravel 11 將已發送的電子郵件儲存到磁碟
+# Laravel 12 將已發送的電子郵件儲存到磁碟
 
 引入 spatie 的 laravel-mail-preview 套件來擴增將已發送的電子郵件儲存到磁碟的郵件驅動，每次發送電子郵件時，都會在`storage/email-previews`中生成一個 .html 和 .eml 檔案，其名稱包括第一個收件人和主題。
 
@@ -16,11 +16,15 @@ $ composer install
 ```sh
 $ php artisan key:generate
 ```
+- 執行 __Artisan__ 指令的 __migrate__ 來執行所有未完成的遷移。
+```sh
+$ php artisan migrate
+```
 - 在瀏覽器中輸入已定義的路由 URL 來訪問，例如：http://127.0.0.1:8000。
 - 你可以經由 `/send-mail` 來進行發送電子郵件。
 
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/FVsQx9U.png)
+![](https://i.imgur.com/DuGwrbL.png)
 > 在網路瀏覽器中打開 .html 檔案時，將能夠看到電子郵件的外觀，但是不同的電子郵件客戶端可能會有一些差異
