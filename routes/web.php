@@ -5,8 +5,8 @@ use Illuminate\Support\Facades\Route;
 Route::mailPreview();
 Route::get('send-mail', function () {
     $details = [
-        'title' => __('Argentine town battles a parrot invasion'),
-        'body'  => __('Thousands of parrots have invaded, driven by deforestation in the surrounding hills, according to biologists. They bite on the town\'s electric cables, causing outages, and are driving residents around the bend with their incessant screeching and deposits everywhere of poo.')
+        'title' => __('Oscar contender \'Hamnet\' boosts tourism at Shakespeare heritage sites'),
+        'body'  => __('Richard Paterson of the Shakespeare Birthplace Trust said visitor numbers have risen 15-20% since the film\'s January release, and he expects this trend to continue.')
     ];
     \Mail::to('receiver@gmail.com')->send(new \App\Mail\Mail($details));
     dd(__('The mail has been sent successfully.'));
